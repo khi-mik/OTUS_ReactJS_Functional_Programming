@@ -1,6 +1,6 @@
 import { compose, map, reduce, split } from "ramda";
 
-/// используем ramda с заданиями про чистые функции 
+/// используем ramda с заданиями про чистые функции
 /// Задание 7 - Напишем compose для поиска имени с наибольшим количеством очков. Вывести нужно только имя!
 export type Team = { name: string; score: number };
 
@@ -27,6 +27,7 @@ export const parseQs = compose(
     if (cur.indexOf("=") < 0) return acc;
     const [prop = "no prop", value = "no val"] = cur.split("=");
     return { ...acc, [prop]: value };
-    }, {} as QsObj
-  ), split("&"), (str: string) => str.substr(1)
+  }, {} as QsObj),
+  split("&"),
+  (str: string) => str.substr(1)
 );

@@ -1,5 +1,5 @@
 /// Получить из A -> B не мутируя оригинальный объект
-/// Задание 4 - Поменять объект 
+/// Задание 4 - Поменять объект
 export type OriginalTeam = {
   size: number;
   name: string;
@@ -25,13 +25,13 @@ type SomeArray = readonly number[] | string[] | number[] | (string | number)[];
 export const originalArrayToExpectedArray = (
   originalArray: SomeArray
 ): SomeArray => {
-  const getVal = (v: any): number | string => {   
-    return v === 1 ? "two" : v + 1;
+  const getVal = (v: number | string): number | string => {
+    return v === 1 ? "two" : +v + 1;
   };
   return originalArray.map(getVal);
 };
 
-/// Задание 6 - Поменять глубокий объект 
+/// Задание 6 - Поменять глубокий объект
 export type Team = {
   name: string;
   captain: {
